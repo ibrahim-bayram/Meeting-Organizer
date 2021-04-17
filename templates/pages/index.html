@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Yeni toplantı</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'index' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="Konu">Konu</label>
+                            <input type="text" name="konu" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Tarih">Tarih(ör:2022-8-15)</label>
+                            <input type="text" name="tarih" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Başlangıç Saati">Başlangıç Saati</label>
+                            <input type="text" name="bsaat" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Bitiş Saati">Bitiş Saati</label>
+                            <input type="text" name="ssaat" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Katılımcılar">Katılımcılar</label>
+                            <input type="text" name="katılımcılar" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
